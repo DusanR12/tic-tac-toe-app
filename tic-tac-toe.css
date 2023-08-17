@@ -1,11 +1,15 @@
-#board {
-    width: 280px;
-    min-height: 450px;
-    border-radius: 10%;
-    padding: 0 20px 20px 20px;
-    text-align: center;
-    background-color: grey;
-    color: white;
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
 }
 
 h1 {
@@ -42,9 +46,7 @@ button {
 }
 
 #restart-button {
-    display: none;
+    display: block;
     font-size: 24px;
-    padding: 12px;
-    margin: 12px auto;
+    padding: 12px;  
 }
-

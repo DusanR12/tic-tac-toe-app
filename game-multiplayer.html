@@ -9,10 +9,15 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="board">
-        <h1>Tic Tac Toe</h1>
-        <h2 id="game-heading" aria-live="polite
-        ">Player 1's Turn</h2>
+    <div class="container">
+        <div class="nav">
+          <img src="/assets/logo.svg" alt="logo">
+          <div class="turn">
+            <p class="turn-text">x</p>
+            <p class="heading-xs">Turn</p>
+          </div>
+          <button id="restart-button">Restart Game</button>
+        </div>
         <table role="grid">
             <tbody>
                 <tr>
@@ -32,7 +37,20 @@
                 </tr>
             </tbody>
         </table>
-        <button id="restart-button">Restart Game</button>
+        <footer>
+          <div>
+            <p>x (p1)</p>
+            <p>0</p>
+          </div>
+          <div>
+            <p>Ties</p>
+            <p>0</p>
+          </div>
+          <div>
+            <p>o (p2)</p>
+            <p>0</p>
+          </div>
+        </footer>
     </div>
 </body>
 </html>
