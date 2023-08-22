@@ -2,6 +2,7 @@
 /* Font variables */
     --ff: sans-serif;
     --fw900: bold;
+    --fs-xxl: 50px;
     --fs-h-l: 40px;
     --fs-h-m: 24px;
     --fs-h-s: 20px;
@@ -9,6 +10,7 @@
     --fs-body: 14px;
     
 /* Color variables */
+/* Change to generic names */
     --light-blue: #31c3bd;
     --light-blue-hover: #65e9e4;
     --light-yellow: #f2b137;
@@ -23,6 +25,7 @@
 
 *, *::before, *::after {
     box-sizing: border-box;
+    text-transform: uppercase;
 }
 
 body {
@@ -68,12 +71,16 @@ table {
 .button-primary-1 {
     display: inline-block;
     background-color: var(--light-yellow);
+    border-radius: 0.9375rem;
+    box-shadow: 0px -8px 0px 0px #CC8B13 inset;
     text-decoration: none;
 }
 
 .button-primary-2 {
     display: inline-block;
     background-color: var(--light-blue);
+    border-radius: 0.9375rem;
+    box-shadow: 0px -8px 0px 0px #118C87 inset;
     text-decoration: none;
 }
 
@@ -85,28 +92,32 @@ table {
     background-color: var(--silver);
 }
 
-.game-square {
-    font-size: 50px;
-    width: 70px;
-    height: 70px;
-    vertical-align: top;
-}
-
-.game-square:disabled {
-    cursor: default;
-}
-
 #restart-button {
-    display: block;
-    font-size: 24px;
-    padding: 12px;  
+    background-color: var(--silver);
+    border-radius: 0.625rem;
+    box-shadow: 0px -4px 0px 0px #527584 inset;
+
+}
+
+.game-square {
+   font-size: var(--fs-xxl);
+   background-color: var(--semi-dark-navy);
+   border-radius: 0.625rem;
+   box-shadow: 0px -4px 0px 0px #10212A inset;
+   width: 70px;
+   height: 70px;
+}
+
+.turn-text {
+   border-radius: 0.625rem;
+   box-shadow: 0px -4px 0px 0px #10212A inset;
 }
 
 .content {
     width: 460px;
 }
 
-/* Hover states */
+/* States */
 .button-x:hover {
     background-color: var(--dark-navy-button-hover);
     cursor: pointer;
@@ -135,7 +146,16 @@ table {
 .button-secondary-2:hover {
     background-color: var(--silver-hover);
     cursor: pointer;
-}   
+} 
+
+#restart-button:hover {
+    background-color: var(--silver-hover);
+    cursor: pointer;
+}
+
+.game-square:disabled {
+    cursor: default;
+}
 
 
 /* Utility classes */
@@ -157,19 +177,21 @@ table {
 
 .body-text {
     font-size: var(--fs-body);
-    text-transform: uppercase;
+}
+
+.heading-m {
+    font-weight: var(--fw900);
+    font-size: var(--fs-h-m);
 }
 
 .heading-s {
     font-weight: var(--fw900);
     font-size: var(--fs-h-s);
-    text-transform: uppercase;
     color: var(--bg-color);
 }
 
 .heading-xs {
     font-weight: var(--fw900);
     font-size: var(--fs-h-xs);
-    text-transform: uppercase;  
 }
 

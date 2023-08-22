@@ -16,6 +16,7 @@ const WIN_CONDITIONS = [
   const dynamicHeader = document.getElementById('game-heading');
   const gameSquares = document.querySelectorAll('.game-square');
   const restartButton = document.getElementById('restart-button');
+
   
   gameSquares.forEach((gameSquare, i) => {
     gameSquare.addEventListener('click' , () => {
