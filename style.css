@@ -23,16 +23,41 @@
 
 }
 
+/* Reset */
+
 *, *::before, *::after {
     box-sizing: border-box;
-    text-transform: uppercase;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
 }
 
 body {
-    margin: 0;
     font-family: var(--ff);
     background-color: var(--bg-color);
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
 }
+
+
 
 button {
     border: none;
@@ -60,6 +85,10 @@ table {
     height: 100vh;
 }
 
+.content {
+    min-width: 460px;
+}
+
 .button-x {
     background-color: inherit;
 }
@@ -84,17 +113,15 @@ table {
 
 .button-secondary-1 {
     background-color: var(--light-yellow);
-    border-radius: 10px;
+    
 }
 
 .button-secondary-2 {
     background-color: var(--silver);
-    border-radius: 10px;
 }
 
 #restart-button {
     background-color: var(--silver);
-    border-radius: 10px;
     box-shadow: 0px -4px 0px 0px #527584 inset;
 
 }
@@ -102,19 +129,13 @@ table {
 .game-square {
    font-size: var(--fs-xxl);
    background-color: var(--semi-dark-navy);
-   border-radius: 10px;
    box-shadow: 0px -4px 0px 0px #10212A inset;
    width: 70px;
    height: 70px;
 }
 
 .turn-text {
-   border-radius: 10px;
    box-shadow: 0px -4px 0px 0px #10212A inset;
-}
-
-.content {
-    width: 460px;
 }
 
 /* States */

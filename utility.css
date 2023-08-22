@@ -46,6 +46,30 @@
     font-size: var(--fs-h-xs);
 }
 
-.border-radius-big {
+.vertical-p-700 {
+    padding-block: 45px;
+}
+
+.verical-p-300 {
+    padding-block: 8px;
+}
+
+.p-600 {
+    padding: 8px 55px 23px;
+}
+
+.p-500 {
+    padding: 24px;
+}
+
+.p-200 {
+    padding: 8px;
+}
+
+.border-radius-300 {
     border-radius: 15px;
+}
+
+.border-radius-200 {
+    border-radius: 10px;
 }
