@@ -71,7 +71,6 @@ table {
 .button-primary-1 {
     display: inline-block;
     background-color: var(--light-yellow);
-    border-radius: 0.9375rem;
     box-shadow: 0px -8px 0px 0px #CC8B13 inset;
     text-decoration: none;
 }
@@ -79,22 +78,23 @@ table {
 .button-primary-2 {
     display: inline-block;
     background-color: var(--light-blue);
-    border-radius: 0.9375rem;
     box-shadow: 0px -8px 0px 0px #118C87 inset;
     text-decoration: none;
 }
 
 .button-secondary-1 {
     background-color: var(--light-yellow);
+    border-radius: 10px;
 }
 
 .button-secondary-2 {
     background-color: var(--silver);
+    border-radius: 10px;
 }
 
 #restart-button {
     background-color: var(--silver);
-    border-radius: 0.625rem;
+    border-radius: 10px;
     box-shadow: 0px -4px 0px 0px #527584 inset;
 
 }
@@ -102,14 +102,14 @@ table {
 .game-square {
    font-size: var(--fs-xxl);
    background-color: var(--semi-dark-navy);
-   border-radius: 0.625rem;
+   border-radius: 10px;
    box-shadow: 0px -4px 0px 0px #10212A inset;
    width: 70px;
    height: 70px;
 }
 
 .turn-text {
-   border-radius: 0.625rem;
+   border-radius: 10px;
    box-shadow: 0px -4px 0px 0px #10212A inset;
 }
 
@@ -159,39 +159,5 @@ table {
 
 
 /* Utility classes */
-.semi-dark-navy-bg {
-    background-color: var(--semi-dark-navy);
-}
 
-.dark-navy-bg {
-    background-color: var(--bg-color);
-}
-
-.dark-navy-clr {
-    color: var(--bg-color);
-}
-
-.silver-clr {
-    color: var(--silver);
-}
-
-.body-text {
-    font-size: var(--fs-body);
-}
-
-.heading-m {
-    font-weight: var(--fw900);
-    font-size: var(--fs-h-m);
-}
-
-.heading-s {
-    font-weight: var(--fw900);
-    font-size: var(--fs-h-s);
-    color: var(--bg-color);
-}
-
-.heading-xs {
-    font-weight: var(--fw900);
-    font-size: var(--fs-h-xs);
-}
 

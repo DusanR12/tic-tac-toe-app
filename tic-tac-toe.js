@@ -12,7 +12,10 @@ const WIN_CONDITIONS = [
   let BOARD_WIDTH = 3;
   let currentPlayer = 1;
   let movesTaken = 0;
-  
+
+  const root = document.documentElement;
+  const primaryColor = getComputedStyle(root).getPropertyValue('--light-blue');
+  const secondaryColor = getComputedStyle(root).getPropertyValue('--light-yellow');
   const dynamicHeader = document.getElementById('game-heading');
   const gameSquares = document.querySelectorAll('.game-square');
   const restartButton = document.getElementById('restart-button');
@@ -27,7 +30,13 @@ const WIN_CONDITIONS = [
   restartButton.addEventListener('click', restartGame);
   
   function makeMove(gameSquare) {
-    gameSquare.textContent = currentPlayer === 1 ? 'X' : 'O';
+     if (currentPlayer === 1) {
+      gameSquare.textContent = 'X';
+      gameSquare.style.color = primaryColor;
+     } else {
+      gameSquare.textContent = 'O';
+      gameSquare.style.color = secondaryColor;
+     }
     gameSquare.disabled = true;
     movesTaken++;
   

@@ -1,0 +1,51 @@
+.semi-dark-navy-bg {
+    background-color: var(--semi-dark-navy);
+}
+
+.dark-navy-bg {
+    background-color: var(--bg-color);
+}
+
+.silver-bg {
+    background-color: var(--silver);
+}
+
+.light-blue-bg {
+    background-color: var(--light-blue);
+}
+
+.light-yellow-bg {
+    background-color: var(--light-yellow);
+}
+
+.dark-navy-clr {
+    color: var(--bg-color);
+}
+
+.silver-clr {
+    color: var(--silver);
+}
+
+.body-text {
+    font-size: var(--fs-body);
+}
+
+.heading-m {
+    font-weight: var(--fw900);
+    font-size: var(--fs-h-m);
+}
+
+.heading-s {
+    font-weight: var(--fw900);
+    font-size: var(--fs-h-s);
+    color: var(--bg-color);
+}
+
+.heading-xs {
+    font-weight: var(--fw900);
+    font-size: var(--fs-h-xs);
+}
+
+.border-radius-big {
+    border-radius: 15px;
+}
