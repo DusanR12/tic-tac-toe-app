@@ -12,22 +12,26 @@
 <body>
    <div class="container">
       <div class="content">
-         <img src="/assets/logo.svg" alt="logo">
-         <div class="semi-dark-navy-bg border-radius-300 p-500">
+         <div class="logo-container">
+            <img src="/assets/logo.svg" alt="logo">
+         </div>
+         <div class="player-pick-container semi-dark-navy-bg border-radius-300 p-500 text-align">
             <p class="heading-xs silver-clr">Pick player 1's mark</p>
-            <div class="dark-navy-bg border-radius-200 p-200">
-               <button class="button-x border-radius-200 ">
+            <div class="dark-navy-bg border-radius-200 p-100 m-top d-flex">
+               <button class="button-x border-radius-200 vertical-p-300 d-flex">
                   <img src="assets/logo-x.svg" alt="x">
                </button>
-               <button class="button-o border-radius-200">
+               <button class="button-o border-radius-200 vertical-p-300 d-flex">
                   <img src="assets/logo-o.svg" alt="o">
                </button>
             </div>
-            <p class="body-text silver-clr">Remember: x goes first</p>
+            <p class="body-text silver-clr m-top">Remember: x goes first</p>
             
          </div>
-         <a class="button-primary-1 border-radius-300 p-600" href=""><p class="heading-s">New game (vs cpu)</p></a>
-         <a class="button-primary-2 border-radius-300 p-600" href="/game-multiplayer.html"><p class="heading-s">New game (vs player)</p></a>
+         <div class="d-flex-col gap-300">
+            <a class="button-primary-1 border-radius-300 p-600 text-align" href=""><p class="heading-s">New game (vs cpu)</p></a>
+            <a class="button-primary-2 border-radius-300 p-600 m-top text-align" href="/game-multiplayer.html"><p class="heading-s">New game (vs player)</p></a>
+         </div>
       </div>   
    </div>
 </body>

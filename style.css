@@ -1,5 +1,5 @@
 :root {
-/* Font variables */
+/* Font Variables */
     --ff: sans-serif;
     --fw900: bold;
     --fs-xxl: 50px;
@@ -9,8 +9,7 @@
     --fs-h-xs: 16px;
     --fs-body: 14px;
     
-/* Color variables */
-/* Change to generic names */
+/* Color Variables */
     --light-blue: #31c3bd;
     --light-blue-hover: #65e9e4;
     --light-yellow: #f2b137;
@@ -21,9 +20,11 @@
     --silver: #a8bfc9;
     --silver-hover: #dbe8ed;
 
+/* Spacing Variables */
+    --spacer-800: 4.3rem;
+    --spacer-400: 2.5rem;
+    --spacer-300: 1.5rem;
 }
-
-/* Reset */
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -57,26 +58,14 @@ body {
     line-height: 1.5;
 }
 
-
-
 button {
     border: none;
 }
 
-h1 {
-    color: var(--light-blue);
-    text-transform: uppercase;
-    font-size: var(--fs-h-l);
-}
-
-h2 {
-    margin: 8px;
-}
-
-table {
+/* table {
     margin: auto;
     border-spacing: 8px;
-}
+} */
 
 .container {
     display: grid;
@@ -86,15 +75,48 @@ table {
 }
 
 .content {
-    min-width: 460px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-400);
+    min-width: 490px;
+}
+
+.header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player-pick-container {
+    box-shadow: 0px -8px 0px 0px #10212A inset;
+}
+
+.main-heading {
+    color: var(--light-blue);
+    text-transform: uppercase;
+    font-size: var(--fs-h-l);
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacer-400);
 }
 
 .button-x {
+    width: 100%;
+    justify-content: center;
     background-color: inherit;
 }
 
 .button-o {
+    width: 100%;
+    justify-content: center;
     background-color: var(--silver);
+}
+
+.logo-container {
+    align-self: center;
 }
 
 .button-primary-1 {
@@ -106,6 +128,7 @@ table {
 
 .button-primary-2 {
     display: inline-block;
+    margin-top: 1,7rem;
     background-color: var(--light-blue);
     box-shadow: 0px -8px 0px 0px #118C87 inset;
     text-decoration: none;
@@ -130,11 +153,13 @@ table {
    font-size: var(--fs-xxl);
    background-color: var(--semi-dark-navy);
    box-shadow: 0px -4px 0px 0px #10212A inset;
-   width: 70px;
-   height: 70px;
+    padding: var(--spacer-800);
 }
 
 .turn-text {
+   justify-content:space-between;
+   align-items: center;
+   gap: calc(var(--spacer-300) - .8rem);
    box-shadow: 0px -4px 0px 0px #10212A inset;
 }
 
@@ -177,8 +202,5 @@ table {
 .game-square:disabled {
     cursor: default;
 }
-
-
-/* Utility classes */
 
 

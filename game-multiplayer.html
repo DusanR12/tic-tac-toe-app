@@ -12,41 +12,33 @@
 <body>
     <section class="semi-dark-navy-bg vertical-p-700">
       <p class="heading-xs silver-clr">Player 1 wins!</p>
-      <h1>X takes the round</h1>
+      <h1 class="main-heading">X takes the round</h1>
       <div>
-        <button class="button-secondary-1 border-radius-200"><p class="heading-xs dark-navy-clr">Quit</p></button>
-        <button class="button-secondary-2 border-radius-200"><p class="heading-xs dark-navy-clr">Next round</p></button>
+        <button class="button-secondary-1 border-radius-200 p-300"><p class="heading-xs dark-navy-clr">Quit</p></button>
+        <button class="button-secondary-2 border-radius-200 p-300"><p class="heading-xs dark-navy-clr">Next round</p></button>
       </div>
     </section>
     <div class="container">
       <div class="content">
-        <div class="nav">
+        <div class="header d-flex">
           <img src="/assets/logo.svg" alt="logo">
-          <div class="turn-text semi-dark-navy-bg border-radius-200">
+          <div class="turn-text semi-dark-navy-bg border-radius-200 p-400 d-flex">
             <p class="turn heading-m silver-clr">x</p>
             <p class="heading-xs silver-clr">Turn</p>
           </div>
-          <button class="border-radius-200" id="restart-button"><img src="./assets/icon-restart.svg" alt="restart button"></button>
+          <button class="border-radius-200 p-200" id="restart-button"><img src="./assets/icon-restart.svg" alt="restart button"></button>
         </div>
-        <table role="grid">
-            <tbody>
-                <tr>
-                  <td><button class="game-square border-radius-200"></button></td>
-                  <td><button class="game-square border-radius-200"></button></td>
-                  <td><button class="game-square border-radius-200"></button></td>
-                </tr>
-                <tr>
-                  <td><button class="game-square border-radius-200"></button></td>
-                  <td><button class="game-square border-radius-200"></button></td>
-                  <td><button class="game-square border-radius-200"></button></td>
-                </tr>
-                <tr>
-                  <td><button class="game-square border-radius-200"></button></td>
-                  <td><button class="game-square border-radius-200"></button></td>
-                  <td><button class="game-square border-radius-200"></button></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="grid" role="grid">
+            <button class="game-square border-radius-200"></button>
+            <button class="game-square border-radius-200"></button>
+            <button class="game-square border-radius-200"></button>
+            <button class="game-square border-radius-200"></button>
+            <button class="game-square border-radius-200"></button>
+            <button class="game-square border-radius-200"></button>
+            <button class="game-square border-radius-200"></button>
+            <button class="game-square border-radius-200"></button>
+            <button class="game-square border-radius-200"></button>
+        </div>
         <footer>
           <div class="light-blue-bg border-radius-300">
             <p class="body-text dark-navy-clr">x (p1)</p>
