@@ -16,7 +16,6 @@ const WIN_CONDITIONS = [
   const root = document.documentElement;
   const primaryColor = getComputedStyle(root).getPropertyValue('--light-blue');
   const secondaryColor = getComputedStyle(root).getPropertyValue('--light-yellow');
-  const dynamicHeader = document.getElementById('game-heading');
   const gameSquares = document.querySelectorAll('.game-square');
   const restartButton = document.getElementById('restart-button');
 
@@ -44,11 +43,9 @@ const WIN_CONDITIONS = [
       dynamicHeader.textContent = `Player ${currentPlayer} Won!`;
       endGame();
     } else if (movesTaken >= BOARD_WIDTH * BOARD_WIDTH) {
-      dynamicHeader.textContent = 'Tie Game!';
-      restartButton.style.display = 'block';
+      endGame();
     } else {
       currentPlayer = currentPlayer === 1 ? 2 : 1;
-      setCurrentPlayerHeader();
     }
   }
   
@@ -66,10 +63,6 @@ const WIN_CONDITIONS = [
     gameSquares.forEach(gameSquare => {
       gameSquare.disabled = true;
     });
-  }
-  
-  function setCurrentPlayerHeader() {
-    dynamicHeader.textContent = `Player ${currentPlayer}'s Turn`;
   }
   
   function restartGame() {

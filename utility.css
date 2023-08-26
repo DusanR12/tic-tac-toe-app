@@ -65,7 +65,7 @@
 }
 
 .p-400 {
-    padding: 8px 24px;
+    padding: 8px 32px;
 }
 
 .p-300 {
@@ -81,7 +81,11 @@
 }
 
 .m-top {
-    margin-top: var(--spacer-300);
+    margin-top: var(--spacer-400);
+}
+
+.square-size-w {
+    width: var(--square-size);
 }
 
 /* Layout */

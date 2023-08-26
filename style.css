@@ -2,7 +2,7 @@
 /* Font Variables */
     --ff: sans-serif;
     --fw900: bold;
-    --fs-xxl: 50px;
+    /* --fs-xxl: 50px; */
     --fs-h-l: 40px;
     --fs-h-m: 24px;
     --fs-h-s: 20px;
@@ -21,9 +21,13 @@
     --silver-hover: #dbe8ed;
 
 /* Spacing Variables */
-    --spacer-800: 4.3rem;
-    --spacer-400: 2.5rem;
-    --spacer-300: 1.5rem;
+    --spacer-400: 1.5rem;
+    --spacer-300: calc(var(--spacer-400) / 2);
+    
+
+    --content-width: 31rem;
+    --square-size: calc((var(--content-width) - var(--spacer-400) * 2) / 3);
+
 }
 
 *, *::before, *::after {
@@ -51,6 +55,7 @@ picture {
 }
 
 body {
+    position: relative;
     font-family: var(--ff);
     background-color: var(--bg-color);
     min-height: 100vh;
@@ -61,11 +66,6 @@ body {
 button {
     border: none;
 }
-
-/* table {
-    margin: auto;
-    border-spacing: 8px;
-} */
 
 .container {
     display: grid;
@@ -78,12 +78,26 @@ button {
     display: flex;
     flex-direction: column;
     gap: var(--spacer-400);
-    min-width: 490px;
+    width: var(--content-width);
 }
 
 .header {
     justify-content: space-between;
     align-items: center;
+}
+
+.footer {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .player-pick-container {
@@ -98,18 +112,20 @@ button {
 
 .grid {
     display: grid;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: var(--spacer-400);
 }
 
-.button-x {
+#button-x {
     width: 100%;
     justify-content: center;
     background-color: inherit;
 }
 
-.button-o {
+#button-o {
     width: 100%;
     justify-content: center;
     background-color: var(--silver);
@@ -136,6 +152,7 @@ button {
 
 .button-secondary-1 {
     background-color: var(--light-yellow);
+    margin-right: var(--spacer-300);
     
 }
 
@@ -150,26 +167,31 @@ button {
 }
 
 .game-square {
-   font-size: var(--fs-xxl);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: calc(var(--square-size) / 2);
    background-color: var(--semi-dark-navy);
    box-shadow: 0px -4px 0px 0px #10212A inset;
-    padding: var(--spacer-800);
+   width: var(--square-size);
+   height: var(--square-size);
+   padding: 0;
 }
 
 .turn-text {
-   justify-content:space-between;
+   justify-content: space-between;
    align-items: center;
-   gap: calc(var(--spacer-300) - .8rem);
+   gap: var(--spacer-300);
    box-shadow: 0px -4px 0px 0px #10212A inset;
 }
 
 /* States */
-.button-x:hover {
+#button-x:hover {
     background-color: var(--dark-navy-button-hover);
     cursor: pointer;
 }
 
-.button-o:hover {
+#button-o:hover {
     background-color: var(--silver-hover);
     cursor: pointer;
 }
