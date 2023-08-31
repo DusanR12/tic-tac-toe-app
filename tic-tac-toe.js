@@ -75,6 +75,37 @@ const WIN_CONDITIONS = [
     });
     restartButton.style.display = 'none';
   }
+
+// function loadExternalHtml() {
+//   fetch('index.html')
+//        .then(response => response.text())
+//        .then(html => {
+//            const tempContainer = document.createElement('div');
+//           tempContainer.innerHTML = html;
+          
+//           const X_Mark = tempContainer.querySelector('#button-x');
+//           const O_Mark = tempContainer.querySelector('#button-o');
+
+//           X_Mark.addEventListener('click', player1IsX);
+//           O_Mark.addEventListener('click', player1IsO);
+//       })
+//       .catch(error => {
+//           console.error('Error loading external HTML:', error);
+//       });
+//  }
+
+// function player1IsX() {
+//     console.log('test');
+//  }
+
+//  function player1IsO() {
+//      console.log('test');
+// }
+//   loadExternalHtml();
+
+
+
+  
   
   
   
