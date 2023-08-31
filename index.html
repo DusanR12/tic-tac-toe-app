@@ -6,42 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
-    <script src="script.js"  defer></script>
+    <script src="tic-tac-toe.js"  defer></script>
     <title>New Game</title>
 </head>
 <body>
    <!--This is the new game page-->
-   <div class="container new-game">
+   <div class="container">
       <div class="content">
-         <div class="logo-container">
+         <div class="align-self-center">
             <img src="/assets/logo.svg" alt="logo">
          </div>
          <div class="player-pick-container semi-dark-navy-bg border-radius-300 p-500 text-align">
             <p class="heading-xs silver-clr">Pick player 1's mark</p>
             <div class="dark-navy-bg border-radius-200 p-100 m-top d-flex">
-               <button class="border-radius-200 vertical-p-300 d-flex" id="button-x">
+               <button class="border-radius-200 vertical-p-300 d-flex" id="secondary-button-1">
                   <img src="assets/logo-x.svg" alt="x">
                </button>
-               <button class="border-radius-200 vertical-p-300 d-flex" id="button-o">
+               <button class="border-radius-200 vertical-p-300 d-flex" id="secondary-button-2">
                   <img src="assets/logo-o.svg" alt="o">
                </button>
             </div>
             <p class="body-text silver-clr m-top">Remember: x goes first</p>
             
          </div>
-         <div class="d-flex-col gap-300">
-            <a class="button-primary-1 border-radius-300 p-600 text-align" href=""><p class="heading-s">New game (vs cpu)</p></a>
-            <a class="button-primary-2 border-radius-300 p-600 m-top text-align" href="/game-multiplayer.html"><p class="heading-s">New game (vs player)</p></a>
+         <div class="d-flex flex-dir-col gap-300">
+            <button class="primary-button-1 border-radius-300 p-600 text-align"><p class="heading-s">New game (vs cpu)</p></button>
+            <button class="primary-button-2 border-radius-300 p-600 m-top text-align" href="/game-multiplayer.html"><p class="heading-s">New game (vs player)</p></button>
          </div>
       </div>   
    </div>
 
    <!--This is the actual gameplay page-->
-   <div class="container game">
+   <div class="container display-none">
       <div class="content">
         <div class="header d-flex">
           <img src="/assets/logo.svg" alt="logo">
-          <div class="turn-text semi-dark-navy-bg border-radius-200 p-400 d-flex">
+          <div class="determine-turn semi-dark-navy-bg border-radius-200 p-400 d-flex">
             <p class="turn heading-m silver-clr">x</p>
             <p class="heading-xs silver-clr">Turn</p>
           </div>
@@ -75,15 +75,15 @@
       </div>  
     </div>
     <!--This is the win state section-->
-    <section class="hero semi-dark-navy-bg vertical-p-700 text-align">
+    <section class="win-state-section semi-dark-navy-bg vertical-p-700 text-align display-none">
       <p class="heading-xs silver-clr">Player 1 wins!</p>
       <h1 class="main-heading m-top">X takes the round</h1>
       <div>
-        <button class="button-secondary-1 border-radius-200 p-300 m-top"><p class="heading-xs dark-navy-clr">Quit</p></button>
-        <button class="button-secondary-2 border-radius-200 p-300 m-top"><p class="heading-xs dark-navy-clr">Next round</p></button>
+        <button class="accent-button-1 border-radius-200 p-300 m-top"><p class="heading-xs dark-navy-clr">Quit</p></button>
+        <button class="accent-button-2 border-radius-200 p-300 m-top"><p class="heading-xs dark-navy-clr">Next round</p></button>
       </div>
     </section>
     <!--This is the dark overlay when win state is active-->
-    <div class="overlay"></div>
+    <div class="overlay display-none"></div>
 </body>
 </html>

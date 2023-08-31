@@ -91,8 +91,7 @@ button {
     align-items: center;
 }
 
-.hero {
-    display: none;
+.win-state-section {
     width: 100%;
     position: absolute;
     top: 50%;
@@ -105,12 +104,6 @@ button {
     box-shadow: 0px -8px 0px 0px #10212A inset;
 }
 
-.main-heading {
-    color: var(--light-blue);
-    text-transform: uppercase;
-    font-size: var(--fs-h-l);
-}
-
 .grid {
     display: grid;
     justify-content: space-between;
@@ -120,30 +113,26 @@ button {
     gap: var(--spacer-400);
 }
 
-#button-x {
+#secondary-button-1 {
     width: 100%;
     justify-content: center;
     background-color: inherit;
 }
 
-#button-o {
+#secondary-button-2 {
     width: 100%;
     justify-content: center;
     background-color: var(--silver);
 }
 
-.logo-container {
-    align-self: center;
-}
-
-.button-primary-1 {
+.primary-button-1 {
     display: inline-block;
     background-color: var(--light-yellow);
     box-shadow: 0px -8px 0px 0px #CC8B13 inset;
     text-decoration: none;
 }
 
-.button-primary-2 {
+.primary-button-2 {
     display: inline-block;
     margin-top: 1,7rem;
     background-color: var(--light-blue);
@@ -151,13 +140,13 @@ button {
     text-decoration: none;
 }
 
-.button-secondary-1 {
+.accent-button-1 {
     background-color: var(--light-yellow);
     margin-right: var(--spacer-300);
     
 }
 
-.button-secondary-2 {
+.accent-button-2 {
     background-color: var(--silver);
 }
 
@@ -179,15 +168,14 @@ button {
    padding: 0;
 }
 
-.turn-text {
-   justify-content: space-between;
-   align-items: center;
-   gap: var(--spacer-300);
-   box-shadow: 0px -4px 0px 0px #10212A inset;
-}
+.determine-turn {
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacer-300);
+    box-shadow: 0px -4px 0px 0px #10212A inset;
+ }
 
 .overlay {
-    display: none;
     position: absolute;
     inset: 0;
     background-color: var(--dark-overlay);
@@ -195,12 +183,12 @@ button {
 }
 
 /* States */
-#button-x:hover {
+#secondary-button-1:hover {
     background-color: var(--dark-navy-button-hover);
     cursor: pointer;
 }
 
-#button-o:hover {
+#secondary-button-2:hover {
     background-color: var(--silver-hover);
     cursor: pointer;
 }

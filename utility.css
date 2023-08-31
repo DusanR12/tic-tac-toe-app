@@ -1,4 +1,4 @@
-/* Colors and Fonts */
+/* Colors and Text */
 .semi-dark-navy-bg {
     background-color: var(--semi-dark-navy);
 }
@@ -31,6 +31,12 @@
     font-size: var(--fs-body);
 }
 
+.main-heading {
+    color: var(--light-blue);
+    text-transform: uppercase;
+    font-size: var(--fs-h-l);
+}
+
 .heading-m {
     font-weight: var(--fw900);
     font-size: var(--fs-h-m);
@@ -47,7 +53,7 @@
     font-size: var(--fs-h-xs);
 }
 
-/* Spacing */
+/* Sizes */
 .vertical-p-700 {
     padding-block: 45px;
 }
@@ -88,9 +94,16 @@
     width: var(--square-size);
 }
 
+.border-radius-300 {
+    border-radius: 15px;
+}
+
+.border-radius-200 {
+    border-radius: 10px;
+}
+
 /* Layout */
-.d-flex-col {
-    display: flex;
+.flex-dir-col {
     flex-direction: column;
 }
 
@@ -104,10 +117,10 @@
 
 
 /* Other */
-.border-radius-300 {
-    border-radius: 15px;
+.display-none {
+    display: none;
 }
 
-.border-radius-200 {
-    border-radius: 10px;
+.align-self-center {
+    align-self: center;
 }
