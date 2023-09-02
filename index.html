@@ -11,7 +11,7 @@
 </head>
 <body>
    <!--This is the new game page-->
-   <div class="container">
+   <div id="container-1" class="container">
       <div class="content">
          <div class="align-self-center">
             <img src="/assets/logo.svg" alt="logo">
@@ -30,19 +30,19 @@
             
          </div>
          <div class="d-flex flex-dir-col gap-300">
-            <button class="primary-button-1 border-radius-300 p-600 text-align"><p class="heading-s">New game (vs cpu)</p></button>
-            <button class="primary-button-2 border-radius-300 p-600 m-top text-align" href="/game-multiplayer.html"><p class="heading-s">New game (vs player)</p></button>
-         </div>
+            <button id="primary-button-1" class="border-radius-300 p-600 text-align"><p class="heading-s">New game (vs cpu)</p></button>
+            <button id="primary-button-2" class="border-radius-300 p-600 m-top text-align"><p class="heading-s">New game (vs player)</p></button>
+         </div>   
       </div>   
    </div>
 
    <!--This is the actual gameplay page-->
-   <div class="container display-none">
+   <div id="container-2" class="container display-none">
       <div class="content">
         <div class="header d-flex">
           <img src="/assets/logo.svg" alt="logo">
           <div class="determine-turn semi-dark-navy-bg border-radius-200 p-400 d-flex">
-            <p class="turn heading-m silver-clr">x</p>
+            <p id="dynamic-text-1-js" class="turn heading-m silver-clr">x</p>
             <p class="heading-xs silver-clr">Turn</p>
           </div>
           <button class="border-radius-200 p-200" id="restart-button"><img src="./assets/icon-restart.svg" alt="restart button"></button>
@@ -60,16 +60,16 @@
         </div>
         <footer class="footer d-flex">
           <div class="light-blue-bg border-radius-300 square-size-w text-align">
-            <p class="body-text dark-navy-clr">x (p1)</p>
-            <p class="heading-m dark-navy-clr">0</p>
+            <p class="body-text dark-navy-clr">x <span id="dynamic-text-2-js">(p1)</span></p>
+            <p id="dynamic-text-3-js" class="heading-m dark-navy-clr">0</p>
           </div>
           <div class="silver-bg border-radius-300 square-size-w text-align">
             <p class="body-text dark-navy-clr">Ties</p>
-            <p class="heading-m dark-navy-clr">0</p>
+            <p id="dynamic-text-4-js" class="heading-m dark-navy-clr">0</p>
           </div>
           <div class="light-yellow-bg border-radius-300 square-size-w text-align">
-            <p class="body-text dark-navy-clr">o (p2)</p>
-            <p class="heading-m dark-navy-clr">0</p>
+            <p class="body-text dark-navy-clr">o <span id="dynamic-text-5-js">(p2)</span></p>
+            <p id="dynamic-text-6-js" class="heading-m dark-navy-clr">0</p>
           </div>
         </footer>
       </div>  

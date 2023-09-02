@@ -125,14 +125,14 @@ button {
     background-color: var(--silver);
 }
 
-.primary-button-1 {
+#primary-button-1 {
     display: inline-block;
     background-color: var(--light-yellow);
     box-shadow: 0px -8px 0px 0px #CC8B13 inset;
     text-decoration: none;
 }
 
-.primary-button-2 {
+#primary-button-2 {
     display: inline-block;
     margin-top: 1,7rem;
     background-color: var(--light-blue);
@@ -193,12 +193,12 @@ button {
     cursor: pointer;
 }
 
-.button-primary-1:hover {
+#primary-button-1:hover {
     background-color: var(--light-yellow-hover);
     cursor: pointer;
 }
 
-.button-primary-2:hover {
+#primary-button-2:hover {
     background-color: var(--light-blue-hover);
     cursor: pointer;
 }
