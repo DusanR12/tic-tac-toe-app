@@ -65,11 +65,11 @@ function gameWithPlayer() {
 function makeMove(gameSquare) {
    if (movesTaken % 2 !== 0) {
     gameSquare.textContent = 'O';
-    gameSquare.classList.add('light-yellow-clr');
+    gameSquare.classList.add('primary-2-clr');
     turn.textContent = 'X';
   } else {
     gameSquare.textContent = 'X'; 
-    gameSquare.classList.add('light-blue-clr');
+    gameSquare.classList.add('primary-1-clr');
     turn.textContent = 'O';
   }
   gameSquare.disabled = true;
@@ -118,9 +118,9 @@ function playerWon() {
   dynamicMark.textContent = `${currentPlayerMark}`;
 
   if (currentPlayerMark === 'X') {
-    whoTakesTheRound.classList.add('light-blue-clr');
+    whoTakesTheRound.classList.add('primary-1-clr');
   } else {
-    whoTakesTheRound.classList.add('light-yellow-clr');
+    whoTakesTheRound.classList.add('primary-2-clr');
     
   }
 
@@ -135,7 +135,7 @@ function tieGame() {
 
   winStateSection.classList.add('gap-500', 'vertical-p-800');
   winStateSection.classList.remove('vertical-p-700');
-  whoTakesTheRound.classList.add('silver-clr');
+  whoTakesTheRound.classList.add('accent-200-clr');
   whoTakesTheRound.textContent = 'round tied';
 
   console.log('Tie-game');
