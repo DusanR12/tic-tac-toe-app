@@ -15,6 +15,7 @@ let currentPlayerName;
 let currentPlayerMark = 'X';
 
 const root = document.documentElement;
+/* Components */ 
 const xMark = document.getElementById('secondary-button-1');
 const oMark = document.getElementById('secondary-button-2');
 const newGameVsCpu = document.getElementById('primary-button-1');
@@ -22,17 +23,20 @@ const newGameVsPlayer = document.getElementById('primary-button-2');
 const restartButton = document.getElementById('restart-button')
 const newGameContainer = document.getElementById('container-1');
 const gameContainer = document.getElementById('container-2');
+const gameSquares = document.querySelectorAll('.game-square');
+const winStateSection = document.querySelector('.win-state-section');
+const overlay = document.querySelector('.overlay');
+
+/* Text, colors etc... */
 const turn = document.getElementById('dynamic-text-1-js');
 const whoIsX = document.getElementById('dynamic-text-2-js');
 const xWinsCount = document.getElementById('dynamic-text-3-js');
 const tiesCount = document.getElementById('dynamic-text-4-js');
 const whoIsO = document.getElementById('dynamic-text-5-js');
 const oWinsCount = document.getElementById('dynamic-text-6-js');
-
-
-const gameSquares = document.querySelectorAll('.game-square');
-const winStateSection = document.querySelector('.win-state-section');
-const overlay = document.querySelector('.overlay');
+const whoWon = document.getElementById('dynamic-text-7-js');
+const whoTakesTheRound = document.getElementById('dynamic-text-8-js');
+const dynamicMark = document.querySelector('.fs-xl');
 const primaryColor = getComputedStyle(root).getPropertyValue('--light-blue');
 const secondaryColor = getComputedStyle(root).getPropertyValue('--light-yellow');
 
@@ -75,7 +79,7 @@ function makeMove(gameSquare) {
   movesTaken++;
 
   if (didPlayerWin()) {
-    endGame();
+    playerWon();
   } else if (movesTaken >= BOARD_WIDTH * BOARD_WIDTH) {
     tieGame();
   }
@@ -107,19 +111,32 @@ function didPlayerWin() {
   });
 };
 
-function endGame() {
+function playerWon() {
+  winStateSection.classList.remove('display-none');
+  overlay.classList.remove('display-none');
   gameSquares.forEach(gameSquare => {
     gameSquare.disabled = true;
   });
+  whoWon.textContent = `${currentPlayerName} wins`;
+  dynamicMark.textContent = `${currentPlayerMark}`;
+  
+
   console.log(`Game ended. The winner is ${currentPlayerName}`);
 }
 
 function tieGame() {
+  winStateSection.classList.remove('display-none');
+  overlay.classList.remove('display-none');
+  restartButton.disabled = true;
+  whoWon.classList.add('display-none');
+  whoTakesTheRound.textContent = 'round tied';
+
   console.log('Tie-game');
+  
 }
 
 function restartGame() {
-  currentPlayer = 1;
+  currentPlayerMark = 'X';
   movesTaken = 0;
   gameSquares.forEach(gameSquare => {
     gameSquare.textContent = '';

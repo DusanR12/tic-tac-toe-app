@@ -31,6 +31,10 @@
     font-size: var(--fs-body);
 }
 
+.fs-xl {
+    font-size: var(--fs-xl);
+}
+
 .main-heading {
     color: var(--light-blue);
     text-transform: uppercase;
@@ -86,8 +90,12 @@
     padding: 8px;
 }
 
-.m-top {
-    margin-top: var(--spacer-400);
+.m-top-200 {
+    margin-top: 22px;
+}
+
+.gap-400 {
+    gap: var(--spacer-400);
 }
 
 .square-size-w {
@@ -113,6 +121,14 @@
 
 .text-align {
     text-align: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
 }
 
 

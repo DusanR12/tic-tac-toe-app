@@ -18,7 +18,7 @@
          </div>
          <div class="player-pick-container semi-dark-navy-bg border-radius-300 p-500 text-align">
             <p class="heading-xs silver-clr">Pick player 1's mark</p>
-            <div class="dark-navy-bg border-radius-200 p-100 m-top d-flex">
+            <div class="dark-navy-bg border-radius-200 p-100 m-top-200 d-flex">
                <button class="border-radius-200 vertical-p-300 d-flex" id="secondary-button-1">
                   <img src="assets/logo-x.svg" alt="x">
                </button>
@@ -26,12 +26,12 @@
                   <img src="assets/logo-o.svg" alt="o">
                </button>
             </div>
-            <p class="body-text silver-clr m-top">Remember: x goes first</p>
+            <p class="body-text silver-clr m-top-200">Remember: x goes first</p>
             
          </div>
          <div class="d-flex flex-dir-col gap-300">
             <button id="primary-button-1" class="border-radius-300 p-600 text-align"><p class="heading-s">New game (vs cpu)</p></button>
-            <button id="primary-button-2" class="border-radius-300 p-600 m-top text-align"><p class="heading-s">New game (vs player)</p></button>
+            <button id="primary-button-2" class="border-radius-300 p-600 m-top-200 text-align"><p class="heading-s">New game (vs player)</p></button>
          </div>   
       </div>   
    </div>
@@ -75,12 +75,15 @@
       </div>  
     </div>
     <!--This is the win state section-->
-    <section class="win-state-section semi-dark-navy-bg vertical-p-700 text-align display-none">
-      <p class="heading-xs silver-clr">Player 1 wins!</p>
-      <h1 class="main-heading m-top">X takes the round</h1>
+    <section class="win-state-section semi-dark-navy-bg vertical-p-700 text-align display-none d-flex flex-dir-col align-center">
+      <p id="dynamic-text-7-js" class="heading-xs silver-clr">Player 1 wins!</p>
+      <h1 id="dynamic-text-8-js" class="main-heading d-flex gap-400">
+         <span class="fs-xl">X</span>
+         <span class="align-self-center">takes the round</span>
+      </h1>
       <div>
-        <button class="accent-button-1 border-radius-200 p-300 m-top"><p class="heading-xs dark-navy-clr">Quit</p></button>
-        <button class="accent-button-2 border-radius-200 p-300 m-top"><p class="heading-xs dark-navy-clr">Next round</p></button>
+        <button class="accent-button-1 border-radius-200 p-300"><p class="heading-xs dark-navy-clr">Quit</p></button>
+        <button class="accent-button-2 border-radius-200 p-300"><p class="heading-xs dark-navy-clr">Next round</p></button>
       </div>
     </section>
     <!--This is the dark overlay when win state is active-->

@@ -2,6 +2,7 @@
 /* Font Variables */
     --ff: sans-serif;
     --fw900: bold;
+    --fs-xl: 80px;
     --fs-h-l: 40px;
     --fs-h-m: 24px;
     --fs-h-s: 20px;
@@ -21,6 +22,7 @@
     --dark-overlay: #000;
 
 /* Spacing Variables */
+    --spacer-500: 2rem;
     --spacer-400: 1.5rem;
     --spacer-300: calc(var(--spacer-400) / 2);
     
@@ -77,7 +79,7 @@ button {
 .content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacer-400);
+    gap: var(--spacer-500);
     width: var(--content-width);
 }
 
