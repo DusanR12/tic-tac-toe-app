@@ -14,7 +14,6 @@ let movesTaken = 0;
 let currentPlayerName;
 let currentPlayerMark = 'X';
 
-const root = document.documentElement;
 /* Components */ 
 const xMark = document.getElementById('secondary-button-1');
 const oMark = document.getElementById('secondary-button-2');
@@ -36,9 +35,7 @@ const whoIsO = document.getElementById('dynamic-text-5-js');
 const oWinsCount = document.getElementById('dynamic-text-6-js');
 const whoWon = document.getElementById('dynamic-text-7-js');
 const whoTakesTheRound = document.getElementById('dynamic-text-8-js');
-const dynamicMark = document.querySelector('.fs-xl');
-const primaryColor = getComputedStyle(root).getPropertyValue('--light-blue');
-const secondaryColor = getComputedStyle(root).getPropertyValue('--light-yellow');
+const dynamicMark = document.getElementById('dynamic-text-9-js');
 
 
 newGameVsCpu.addEventListener('click', gameWithCpu);
@@ -68,11 +65,11 @@ function gameWithPlayer() {
 function makeMove(gameSquare) {
    if (movesTaken % 2 !== 0) {
     gameSquare.textContent = 'O';
-    gameSquare.style.color = secondaryColor;
+    gameSquare.classList.add('light-yellow-clr');
     turn.textContent = 'X';
   } else {
     gameSquare.textContent = 'X'; 
-    gameSquare.style.color = primaryColor;
+    gameSquare.classList.add('light-blue-clr');
     turn.textContent = 'O';
   }
   gameSquare.disabled = true;
@@ -119,7 +116,13 @@ function playerWon() {
   });
   whoWon.textContent = `${currentPlayerName} wins`;
   dynamicMark.textContent = `${currentPlayerMark}`;
-  
+
+  if (currentPlayerMark === 'X') {
+    whoTakesTheRound.classList.add('light-blue-clr');
+  } else {
+    whoTakesTheRound.classList.add('light-yellow-clr');
+    
+  }
 
   console.log(`Game ended. The winner is ${currentPlayerName}`);
 }
@@ -129,6 +132,10 @@ function tieGame() {
   overlay.classList.remove('display-none');
   restartButton.disabled = true;
   whoWon.classList.add('display-none');
+
+  winStateSection.classList.add('gap-500', 'vertical-p-800');
+  winStateSection.classList.remove('vertical-p-700');
+  whoTakesTheRound.classList.add('silver-clr');
   whoTakesTheRound.textContent = 'round tied';
 
   console.log('Tie-game');

@@ -3,10 +3,10 @@
     --ff: sans-serif;
     --fw900: bold;
     --fs-xl: 80px;
-    --fs-h-l: 40px;
-    --fs-h-m: 24px;
-    --fs-h-s: 20px;
-    --fs-h-xs: 16px;
+    --fs-l: 40px;
+    --fs-m: 24px;
+    --fs-s: 20px;
+    --fs-xs: 16px;
     --fs-body: 14px;
     
 /* Color Variables */
@@ -94,6 +94,9 @@ button {
 }
 
 .win-state-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     position: absolute;
     top: 50%;
@@ -143,13 +146,13 @@ button {
 }
 
 .accent-button-1 {
-    background-color: var(--light-yellow);
+    background-color: var(--silver);
     margin-right: var(--spacer-300);
     
 }
 
 .accent-button-2 {
-    background-color: var(--silver);
+    background-color: var(--light-yellow);
 }
 
 #restart-button {
