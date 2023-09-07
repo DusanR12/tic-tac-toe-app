@@ -9,16 +9,21 @@ const WIN_CONDITIONS = [
   [0, 4, 8], // first diagonal
   [2, 4, 6], // second diagonal
 ];
+
+let player1Mark;
+let currentPlayerName;
 let BOARD_WIDTH = 3;
 let movesTaken = 0;
-let currentPlayerName;
 let currentPlayerMark = 'X';
+let tie = false;
 
 /* Components */ 
-const xMark = document.getElementById('secondary-button-1');
-const oMark = document.getElementById('secondary-button-2');
-const newGameVsCpu = document.getElementById('primary-button-1');
-const newGameVsPlayer = document.getElementById('primary-button-2');
+const newGameVsCpuButton = document.getElementById('primary-button-1');
+const newGameVsPlayerButton = document.getElementById('primary-button-2');
+const xMarkButton = document.getElementById('secondary-button-1');
+const oMarkButton = document.getElementById('secondary-button-2');
+const quitButton = document.getElementById('accent-button-1');
+const nextRoundButton = document.getElementById('accent-button-2');
 const restartButton = document.getElementById('restart-button')
 const newGameContainer = document.getElementById('container-1');
 const gameContainer = document.getElementById('container-2');
@@ -36,13 +41,16 @@ const oWinsCount = document.getElementById('dynamic-text-6-js');
 const whoWon = document.getElementById('dynamic-text-7-js');
 const whoTakesTheRound = document.getElementById('dynamic-text-8-js');
 const dynamicMark = document.getElementById('dynamic-text-9-js');
+const roundWonOrTied = document.getElementById('dynamic-text-10-js');
 
 
-newGameVsCpu.addEventListener('click', gameWithCpu);
-newGameVsPlayer.addEventListener('click', gameWithPlayer);
-
-xMark.addEventListener('click', player1IsX);
-oMark.addEventListener('click', player1IsO);
+newGameVsCpuButton.addEventListener('click', gameWithCpu);
+newGameVsPlayerButton.addEventListener('click', gameWithPlayer);
+xMarkButton.addEventListener('click', player1IsX);
+oMarkButton.addEventListener('click', player1IsO);
+nextRoundButton.addEventListener('click', nextRound);
+quitButton.addEventListener('click', quit);
+restartButton.addEventListener('click', restartGame);
 
 gameSquares.forEach((gameSquare, i) => {
   gameSquare.addEventListener('click' , () => {
@@ -50,11 +58,11 @@ gameSquares.forEach((gameSquare, i) => {
   });
 });
 
-restartButton.addEventListener('click', restartGame);
+
 
 /* Feature to be added */
 function gameWithCpu() {
-
+  /* Feature */
 }
 
 function gameWithPlayer() {
@@ -62,16 +70,40 @@ function gameWithPlayer() {
   gameContainer.classList.remove('display-none');
 }
 
+function player1IsX() {
+    currentPlayerName = 'player 1';
+    player1Mark = 'X';
+    console.log(`current player: ${currentPlayerName}`);
+    console.log(`Player 1's mark is ${player1Mark}`);
+}
+
+function player1IsO() {
+  currentPlayerName = 'player 2';
+  player1Mark = 'O';
+  whoIsX.textContent = '(P2)';
+  whoIsO.textContent = '(P1)';
+  console.log(`current player: ${currentPlayerName}`);
+  console.log(`Player 1's mark is ${player1Mark}`);
+}
+
 function makeMove(gameSquare) {
-   if (movesTaken % 2 !== 0) {
-    gameSquare.textContent = 'O';
-    gameSquare.classList.add('primary-2-clr');
-    turn.textContent = 'X';
-  } else {
-    gameSquare.textContent = 'X'; 
-    gameSquare.classList.add('primary-1-clr');
-    turn.textContent = 'O';
+  switch (currentPlayerMark) {
+    case 'X':
+      gameSquare.textContent = 'X'; 
+      gameSquare.classList.add('primary-1-clr');
+      turn.textContent = 'O';
+      break;
+    case 'O':
+      gameSquare.textContent = 'O';
+      gameSquare.classList.add('primary-2-clr');
+      turn.textContent = 'X';
+      break;
+    default:
+      throw new Error('Something went wrong');
   }
+
+  console.log(`Current player mark: ${currentPlayerMark}`);
+
   gameSquare.disabled = true;
   movesTaken++;
 
@@ -87,19 +119,6 @@ function makeMove(gameSquare) {
   } 
 }
 
-function player1IsX() {
-  currentPlayerName = 'player 1';
-  console.log(`current player: ${currentPlayerName}`);
-}
-
-function player1IsO() {
-  currentPlayerName = 'player 2';
-
-  whoIsX.textContent = '(P2)';
-  whoIsO.textContent = '(P1)';
-  console.log(`current player: ${currentPlayerName}`);
-}
-
 function didPlayerWin() {
   return WIN_CONDITIONS.some(condition => {
     return condition.every(gameSquarePosition => {
@@ -111,6 +130,7 @@ function didPlayerWin() {
 function playerWon() {
   winStateSection.classList.remove('display-none');
   overlay.classList.remove('display-none');
+  restartButton.disabled = true;
   gameSquares.forEach(gameSquare => {
     gameSquare.disabled = true;
   });
@@ -128,6 +148,7 @@ function playerWon() {
 }
 
 function tieGame() {
+  tie = true;
   winStateSection.classList.remove('display-none');
   overlay.classList.remove('display-none');
   restartButton.disabled = true;
@@ -136,17 +157,70 @@ function tieGame() {
   winStateSection.classList.add('gap-500', 'vertical-p-800');
   winStateSection.classList.remove('vertical-p-700');
   whoTakesTheRound.classList.add('accent-200-clr');
-  whoTakesTheRound.textContent = 'round tied';
+  whoTakesTheRound.removeChild(dynamicMark);
+  roundWonOrTied.textContent = 'round tied'
+
 
   console.log('Tie-game');
   
 }
 
 function restartGame() {
-  currentPlayerMark = 'X';
-  movesTaken = 0;
-  gameSquares.forEach(gameSquare => {
-    gameSquare.textContent = '';
-    gameSquare.disabled = false;
-  });
+  reset();
+};
+
+function nextRound() {
+  /* Score */
+  if (tie) {
+    tiesCount.textContent++
+  } else if (currentPlayerMark === 'X') {
+    xWinsCount.textContent++
+  } else {
+    oWinsCount.textContent++
+  }
+  reset();
 }
+
+function quit() {
+  tiesCount.textContent = '0';
+  xWinsCount.textContent = '0';
+  oWinsCount.textContent = '0';
+  player1Mark = undefined;
+  gameContainer.classList.add('display-none');
+  newGameContainer.classList.remove('display-none');
+  reset()
+}
+
+function reset() {
+  winStateSection.classList.add('display-none');
+  overlay.classList.add('display-none');
+  movesTaken = 0;
+  currentPlayerMark = 'X';
+  currentPlayerName = undefined;
+  turn.textContent = 'X';
+  tie = false;
+  restartButton.disabled = false;
+  whoWon.classList.remove('display-none');
+  whoTakesTheRound.insertBefore(dynamicMark, whoTakesTheRound.firstChild);
+  whoTakesTheRound.classList.remove('primary-1-clr', 'primary-2-clr');
+  winStateSection.classList.remove('gap-500', 'vertical-p-800');
+  winStateSection.classList.add('vertical-p-700');
+  winStateSection.classList.remove('accent-200-clr');
+  roundWonOrTied.textContent = 'takes the round';
+  gameSquares.forEach(gameSquare => {
+    gameSquare.disabled = false;
+    gameSquare.textContent = '';
+    gameSquare.classList.remove('primary-1-clr', 'primary-2-clr');
+  });
+
+  switch (player1Mark) {
+    case 'X':
+      player1IsX();
+      break;
+    case 'O':
+      player1IsO();
+      break;
+    default:
+      console.log('New Game');
+  }
+};

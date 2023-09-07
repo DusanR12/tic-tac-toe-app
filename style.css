@@ -145,13 +145,13 @@ button {
     text-decoration: none;
 }
 
-.accent-button-1 {
+#accent-button-1 {
     background-color: var(--accent-200);
     margin-right: var(--spacer-300);
     
 }
 
-.accent-button-2 {
+#accent-button-2 {
     background-color: var(--primary-2);
 }
 
