@@ -69,11 +69,11 @@
 
 /* Sizes */
 .vertical-p-800 {
-    padding-block: 64px;
+    padding-block: 4rem;
 }
 
 .vertical-p-700 {
-    padding-block: 45px;
+    padding-block: 2.8rem;
 }
 
 .vertical-p-300 {
@@ -81,31 +81,31 @@
 }
 
 .p-600 {
-    padding: 12px 80px 22px;
+    padding: 0.8rem 5rem 1.4rem;
 }
 
 .p-500 {
-    padding: 24px;
+    padding: 1.5rem;
 }
 
 .p-400 {
-    padding: 8px 32px;
+    padding: .5rem 2rem;
 }
 
 .p-300 {
-    padding: 10px 16px;
+    padding: 0.6rem 1rem;
 }
 
 .p-200 {
-    padding: 16px;
+    padding: 1rem;
 }
 
 .p-100 {
-    padding: 8px;
+    padding: 0.5rem;
 }
 
 .m-top-200 {
-    margin-top: 22px;
+    margin-top: 1.4rem;
 }
 
 .gap-400 {

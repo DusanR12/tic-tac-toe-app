@@ -10,9 +10,8 @@
     <title>New Game</title>
 </head>
 <body>
-   <!--This is the new game page-->
-   <div id="container-1" class="container">
-      <div class="content">
+   <div class="container">
+      <div id="container-1" class="content">
          <div class="align-self-center">
             <img src="/assets/logo.svg" alt="logo">
          </div>
@@ -34,11 +33,7 @@
             <button id="primary-button-2" class="border-radius-300 p-600 m-top-200 text-align"><p class="heading-s">New game (vs player)</p></button>
          </div>   
       </div>   
-   </div>
-
-   <!--This is the actual gameplay page-->
-   <div id="container-2" class="container display-none">
-      <div class="content">
+      <div id="container-2" class="content display-none">
         <div class="header d-flex">
           <img src="/assets/logo.svg" alt="logo">
           <div class="determine-turn secondary-700-bg border-radius-200 p-400 d-flex">
@@ -73,20 +68,20 @@
           </div>
         </footer>
       </div>  
-    </div>
     <!--This is the win state section-->
-    <section class="win-state-section secondary-700-bg text-align display-none vertical-p-700 d-flex flex-dir-col">
-      <p id="dynamic-text-7-js" class="heading-xs accent-200-clr">Player 1 wins!</p>
-      <h1 id="dynamic-text-8-js" class="main-heading d-flex gap-400">
-         <span id="dynamic-text-9-js" class="fs-xl">X</span>
-         <span id="dynamic-text-10-js" class="align-self-center">takes the round</span>
-      </h1>
-      <div>
-        <button id="accent-button-1" class="border-radius-200 p-300"><p class="heading-xs secondary-800-clr">Quit</p></button>
-        <button id="accent-button-2" class="border-radius-200 p-300"><p class="heading-xs secondary-800-clr">Next round</p></button>
-      </div>
-    </section>
+      <section class="win-state-section secondary-700-bg text-align display-none vertical-p-700 d-flex flex-dir-col">
+         <p id="dynamic-text-7-js" class="heading-xs accent-200-clr">Player 1 wins!</p>
+         <h1 id="dynamic-text-8-js" class="main-heading d-flex gap-400">
+            <span id="dynamic-text-9-js" class="fs-xl">X</span>
+            <span id="dynamic-text-10-js" class="align-self-center">takes the round</span>
+         </h1>
+         <div>
+         <button id="accent-button-1" class="border-radius-200 p-300"><p class="heading-xs secondary-800-clr">Quit</p></button>
+         <button id="accent-button-2" class="border-radius-200 p-300"><p class="heading-xs secondary-800-clr">Next round</p></button>
+         </div>
+      </section>
     <!--This is the dark overlay when win state is active-->
-    <div class="overlay display-none"></div>
+      <div class="overlay display-none"></div>
+   </div>
 </body>
 </html>

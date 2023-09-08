@@ -58,7 +58,28 @@ gameSquares.forEach((gameSquare, i) => {
   });
 });
 
+newGameVsCpuButton.disabled = true;
+newGameVsPlayerButton.disabled = true;
 
+function player1IsX() {
+  currentPlayerName = 'player 1';
+  player1Mark = 'X';
+  newGameVsCpuButton.disabled = false;
+  newGameVsPlayerButton.disabled = false;  
+  console.log(`current player: ${currentPlayerName}`);
+  console.log(`Player 1's mark is ${player1Mark}`);
+}
+
+function player1IsO() {
+currentPlayerName = 'player 2';
+player1Mark = 'O';
+whoIsX.textContent = '(P2)';
+whoIsO.textContent = '(P1)';
+newGameVsCpuButton.disabled = false;
+newGameVsPlayerButton.disabled = false; 
+console.log(`current player: ${currentPlayerName}`);
+console.log(`Player 1's mark is ${player1Mark}`);
+}
 
 /* Feature to be added */
 function gameWithCpu() {
@@ -70,21 +91,6 @@ function gameWithPlayer() {
   gameContainer.classList.remove('display-none');
 }
 
-function player1IsX() {
-    currentPlayerName = 'player 1';
-    player1Mark = 'X';
-    console.log(`current player: ${currentPlayerName}`);
-    console.log(`Player 1's mark is ${player1Mark}`);
-}
-
-function player1IsO() {
-  currentPlayerName = 'player 2';
-  player1Mark = 'O';
-  whoIsX.textContent = '(P2)';
-  whoIsO.textContent = '(P1)';
-  console.log(`current player: ${currentPlayerName}`);
-  console.log(`Player 1's mark is ${player1Mark}`);
-}
 
 function makeMove(gameSquare) {
   switch (currentPlayerMark) {
@@ -182,6 +188,8 @@ function nextRound() {
 }
 
 function quit() {
+  newGameVsPlayerButton.disabled = true;
+  newGameVsCpuButton.disalbed = true;
   tiesCount.textContent = '0';
   xWinsCount.textContent = '0';
   oWinsCount.textContent = '0';

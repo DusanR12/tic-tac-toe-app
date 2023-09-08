@@ -27,7 +27,7 @@
     --spacer-300: calc(var(--spacer-400) / 2);
     
 
-    --content-width: 31rem;
+    --content-width: 29rem;
     --square-size: calc((var(--content-width) - var(--spacer-400) * 2) / 3);
 
 }
@@ -57,6 +57,8 @@ picture {
 }
 
 body {
+    display: grid;
+    place-items: center;
     position: relative;
     font-family: var(--ff);
     background-color: var(--secondary-800);
@@ -70,10 +72,16 @@ button {
 }
 
 .container {
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+}
+
+#container-1 {
+}
+
+#container-2 {
 }
 
 .content {
@@ -139,7 +147,6 @@ button {
 
 #primary-button-2 {
     display: inline-block;
-    margin-top: 1,7rem;
     background-color: var(--primary-1);
     box-shadow: 0px -8px 0px 0px #118C87 inset;
     text-decoration: none;
