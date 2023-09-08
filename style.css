@@ -50,6 +50,10 @@ dd {
   text-transform: uppercase;
 }
 
+h1 {
+    line-height: normal;
+}
+
 img,
 picture {
   max-width: 100%;

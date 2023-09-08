@@ -43,28 +43,24 @@
     font-size: var(--fs-xl);
 }
 
-.main-heading {
-    text-align: center;
+.fs-l {
     font-size: var(--fs-l);
-    line-height: normal;
-    justify-content: center;
 }
 
-
-.heading-m {
-    font-weight: var(--fw900);
+.fs-m {
     font-size: var(--fs-m);
 }
 
-.heading-s {
-    font-weight: var(--fw900);
+.fs-s {
     font-size: var(--fs-s);
-    color: var(--secondary-800);
 }
 
-.heading-xs {
-    font-weight: var(--fw900);
+.fs-xs {
     font-size: var(--fs-xs);
+}
+
+.fw-bold {
+    font-weight: var(--fw900);
 }
 
 /* Sizes */
