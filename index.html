@@ -6,82 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="media.css">
     <script src="tic-tac-toe.js"  defer></script>
     <title>New Game</title>
 </head>
 <body>
-   <div class="container">
-      <div id="container-1" class="content">
-         <div class="align-self-center">
-            <img src="/assets/logo.svg" alt="logo">
+   <div id="container-1" class="content">
+      <div class="align-self-center">
+         <img src="/assets/logo.svg" alt="logo">
+      </div>
+      <div class="player-pick-container secondary-700-bg border-radius-300 p-500 text-center">
+         <p class="fw-bold fs-xs accent-200-clr">Pick player 1's mark</p>
+         <div class="secondary-800-bg border-radius-200 p-100 m-top-200 d-flex">
+            <button class="border-radius-200 vertical-p-300 d-flex secondary-800-bg" id="secondary-button-1">
+               <svg width="36" height="32" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z" fill="#A8A8A8"/></g></svg>
+            </button>
+            <button class="border-radius-200 vertical-p-300 d-flex secondary-800-bg" id="secondary-button-2">
+               <svg width="108" height="32" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z" fill="#A8A8A8" fill-rule="nonzero"/></g></svg>
+            </button>
          </div>
-         <div class="player-pick-container secondary-700-bg border-radius-300 p-500 text-align">
-            <p class="fw-bold fs-xs accent-200-clr">Pick player 1's mark</p>
-            <div class="secondary-800-bg border-radius-200 p-100 m-top-200 d-flex">
-               <button class="border-radius-200 vertical-p-300 d-flex" id="secondary-button-1">
-                  <img src="assets/logo-x.svg" alt="x">
-               </button>
-               <button class="border-radius-200 vertical-p-300 d-flex" id="secondary-button-2">
-                  <img src="assets/logo-o.svg" alt="o">
-               </button>
-            </div>
-            <p class="body-text accent-200-clr m-top-200">Remember: x goes first</p>
-            
-         </div>
-         <div class="d-flex flex-dir-col">
-            <button id="primary-button-1" class="border-radius-300 p-600 text-align"><p class="fs-s fw-bold secondary-800-clr">New game (vs cpu)</p></button>
-            <button id="primary-button-2" class="border-radius-300 p-600 m-top-200 text-align"><p class="fs-s fw-bold secondary-800-clr">New game (vs player)</p></button>
-         </div>   
+         <p class="body-text accent-200-clr m-top-200">Remember: x goes first</p>
+         
+      </div>
+      <div class="d-flex flex-dir-col">
+         <button id="primary-button-1" class="border-radius-300 p-600 text-center"><p class="fs-s fw-bold secondary-800-clr">New game (vs cpu)</p></button>
+         <button id="primary-button-2" class="border-radius-300 p-600 m-top-200 text-center"><p class="fs-s fw-bold secondary-800-clr">New game (vs player)</p></button>
       </div>   
-      <div id="container-2" class="content display-none">
-        <div class="header d-flex">
-          <img src="/assets/logo.svg" alt="logo">
-          <div class="determine-turn secondary-700-bg border-radius-200 p-400 d-flex">
-            <p id="dynamic-text-1-js" class="turn fs-m fw-bold accent-200-clr">x</p>
-            <p class="fw-bold fs-xs accent-200-clr">Turn</p>
-          </div>
-          <button class="border-radius-200 p-200" id="restart-button"><img src="./assets/icon-restart.svg" alt="restart button"></button>
-        </div>
-        <div class="grid" role="grid">
-            <button class="game-square border-radius-200"></button>
-            <button class="game-square border-radius-200"></button>
-            <button class="game-square border-radius-200"></button>
-            <button class="game-square border-radius-200"></button>
-            <button class="game-square border-radius-200"></button>
-            <button class="game-square border-radius-200"></button>
-            <button class="game-square border-radius-200"></button>
-            <button class="game-square border-radius-200"></button>
-            <button class="game-square border-radius-200"></button>
-        </div>
-        <footer class="footer d-flex">
-          <div class="primary-1-bg border-radius-300 square-size-w text-align">
-            <p class="body-text secondary-800-clr">x <span id="dynamic-text-2-js">(p1)</span></p>
-            <p id="dynamic-text-3-js" class="fs-m fw-bold secondary-800-clr">0</p>
-          </div>
-          <div class="accent-200-bg border-radius-300 square-size-w text-align">
-            <p class="body-text secondary-800-clr">Ties</p>
-            <p id="dynamic-text-4-js" class="fs-m fw-bold secondary-800-clr">0</p>
-          </div>
-          <div class="primary-2-bg border-radius-300 square-size-w text-align">
-            <p class="body-text secondary-800-clr">o <span id="dynamic-text-5-js">(p2)</span></p>
-            <p id="dynamic-text-6-js" class="fs-m fw-bold secondary-800-clr">0</p>
-          </div>
-        </footer>
-      </div>  
-    <!--This is the win state section-->
-      <section class="win-state-section secondary-700-bg text-align display-none vertical-p-700 d-flex flex-dir-col">
-         <p id="dynamic-text-7-js" class="fw-bold fs-xs accent-200-clr">Player 1 wins!</p>
-         <h1 id="dynamic-text-8-js" class="fs-l text-align justify-center d-flex gap-400">
-            <span id="dynamic-text-9-js" class="fs-xl">X</span>
-            <span id="dynamic-text-10-js" class="align-self-center">takes the round</span>
-         </h1>
-         <div>
-         <button id="accent-button-1" class="border-radius-200 p-300"><p class="fw-bold fs-xs secondary-800-clr">Quit</p></button>
-         <button id="accent-button-2" class="border-radius-200 p-300"><p class="fw-bold fs-xs secondary-800-clr">Next round</p></button>
+   </div>   
+   <div id="container-2" class="content display-none">
+      <div class="header d-flex">
+         
+         <div class="equal-size-flex-item">
+            <img src="/assets/logo.svg" alt="logo">
+         </div> 
+         <div class="determine-turn secondary-700-bg border-radius-200 p-400 d-flex equal-size-flex-item">
+         <p id="dynamic-text-1-js" class="turn fs-m fw-bold accent-200-clr">x</p>
+         <p class="fw-bold fs-xs accent-200-clr">Turn</p>
          </div>
-      </section>
-    <!--This is the dark overlay when win state is active-->
-      <div class="overlay display-none"></div>
-   </div>
+         <div class="equal-size-flex-item text-right">
+            <button class="border-radius-200 p-200" id="restart-button"><img src="./assets/icon-restart.svg" alt="restart button"></button>
+         </div>
+      </div>
+      <div class="grid m-top-200" role="grid">
+         <button class="game-square border-radius-200"></button>
+         <button class="game-square border-radius-200"></button>
+         <button class="game-square border-radius-200"></button>
+         <button class="game-square border-radius-200"></button>
+         <button class="game-square border-radius-200"></button>
+         <button class="game-square border-radius-200"></button>
+         <button class="game-square border-radius-200"></button>
+         <button class="game-square border-radius-200"></button>
+         <button class="game-square border-radius-200"></button>
+      </div>
+      <footer class="footer d-flex m-top-200">
+         <div class="primary-1-bg border-radius-300 equal-size-flex-item text-center">
+         <p class="body-text secondary-800-clr">x <span id="dynamic-text-2-js">(p1)</span></p>
+         <p id="dynamic-text-3-js" class="fs-m fw-bold secondary-800-clr">0</p>
+         </div>
+         <div class="accent-200-bg border-radius-300 equal-size-flex-item text-center">
+         <p class="body-text secondary-800-clr">Ties</p>
+         <p id="dynamic-text-4-js" class="fs-m fw-bold secondary-800-clr">0</p>
+         </div>
+         <div class="primary-2-bg border-radius-300 equal-size-flex-item text-center">
+         <p class="body-text secondary-800-clr">o <span id="dynamic-text-5-js">(p2)</span></p>
+         <p id="dynamic-text-6-js" class="fs-m fw-bold secondary-800-clr">0</p>
+         </div>
+      </footer>
+   </div>  
+   <!--This is the win state section-->
+   <section class="win-state-section secondary-700-bg text-center display-none vertical-p-700 d-flex flex-dir-col">
+      <p id="dynamic-text-7-js" class="fw-bold fs-xs accent-200-clr">Player 1 wins!</p>
+      <h1 id="dynamic-text-8-js" class="fs-l text-center justify-center d-flex gap-400">
+         <span id="dynamic-text-9-js" class="fs-xl">X</span>
+         <span id="dynamic-text-10-js" class="align-self-center">takes the round</span>
+      </h1>
+      <div>
+      <button id="accent-button-1" class="border-radius-200 p-300"><p class="fw-bold fs-xs secondary-800-clr">Quit</p></button>
+      <button id="accent-button-2" class="border-radius-200 p-300"><p class="fw-bold fs-xs secondary-800-clr">Next round</p></button>
+      </div>
+   </section>
+   <!--This is the dark overlay when win state is active-->
+   <div class="overlay display-none"></div>
+</div>
 </body>
 </html>

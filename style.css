@@ -22,8 +22,8 @@
     --dark-overlay: #000;
 
 /* Spacing Variables */
-    --spacer-500: 2rem;
-    --spacer-400: 1.5rem;
+    --spacer-500: 2.5rem;
+    --spacer-400: 1rem;
     --spacer-300: calc(var(--spacer-400) / 2);
     
 
@@ -75,25 +75,16 @@ button {
     border: none;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#container-1 {
-}
-
-#container-2 {
-}
-
 .content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacer-500);
-    width: var(--content-width);
+    width: var(--content-width);    
 }
+
+#container-1 {
+    gap: var(--spacer-500);
+}
+
 
 .header {
     justify-content: space-between;
@@ -133,16 +124,15 @@ button {
 #secondary-button-1 {
     width: 100%;
     justify-content: center;
-    background-color: inherit;
 }
 
 #secondary-button-2 {
     width: 100%;
     justify-content: center;
-    background-color: var(--accent-200);
 }
 
 #primary-button-1 {
+    opacity: .4;
     display: inline-block;
     background-color: var(--primary-2);
     box-shadow: 0px -8px 0px 0px #CC8B13 inset;
@@ -150,6 +140,7 @@ button {
 }
 
 #primary-button-2 {
+    /* opacity: .4; */
     display: inline-block;
     background-color: var(--primary-1);
     box-shadow: 0px -8px 0px 0px #118C87 inset;
@@ -167,6 +158,7 @@ button {
 }
 
 #restart-button {
+    margin-left: auto;
     background-color: var(--accent-200);
     box-shadow: 0px -4px 0px 0px #527584 inset;
 
@@ -199,18 +191,9 @@ button {
 }
 
 /* States */
-#secondary-button-1:hover {
-    background-color: var(--secondary-800-hover);
-    cursor: pointer;
-}
-
+#secondary-button-1:hover,
 #secondary-button-2:hover {
-    background-color: var(--accent-200-hover);
-    cursor: pointer;
-}
-
-#primary-button-1:hover {
-    background-color: var(--primary-2-hover);
+    background-color: var(--secondary-800-hover);
     cursor: pointer;
 }
 
@@ -234,8 +217,25 @@ button {
     cursor: pointer;
 }
 
-.game-square:disabled {
+#primary-button-2:disabled{
+    opacity: .4;
     cursor: default;
 }
+
+#primary-button-2:disabled:hover {
+    background-color: var(--primary-1);
+}
+
+#secondary-button-1:disabled,
+#secondary-button-2:disabled {
+    background-color: var(--accent-200);
+    cursor: default;
+}
+
+button:disabled svg path {
+    fill: var(--secondary-800);
+}
+
+
 
 

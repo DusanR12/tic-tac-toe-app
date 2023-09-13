@@ -89,7 +89,7 @@
 }
 
 .p-300 {
-    padding: 0.6rem 1rem;
+    padding: .5rem 1rem;
 }
 
 .p-200 {
@@ -101,7 +101,7 @@
 }
 
 .m-top-200 {
-    margin-top: 1.4rem;
+    margin-top: 1.2rem;
 }
 
 .gap-400 {
@@ -112,8 +112,8 @@
     gap: var(--spacer-500);
 }
 
-.square-size-w {
-    width: var(--square-size);
+.equal-size-flex-item {
+    flex-basis: var(--square-size);
 }
 
 .border-radius-300 {
@@ -133,8 +133,12 @@
     display: flex;
 }
 
-.text-align {
+.text-center {
     text-align: center;
+}
+
+.text-right {
+    text-align: right;
 }
 
 .align-center {
@@ -153,4 +157,10 @@
 .display-none {
     display: none;
 }
+
+.fill-clr {
+    fill: var(--secondary-800);
+}
+
+
 

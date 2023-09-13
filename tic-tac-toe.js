@@ -62,6 +62,8 @@ newGameVsCpuButton.disabled = true;
 newGameVsPlayerButton.disabled = true;
 
 function player1IsX() {
+  xMarkButton.disabled = true;
+  oMarkButton.disabled = false;
   currentPlayerName = 'player 1';
   player1Mark = 'X';
   newGameVsCpuButton.disabled = false;
@@ -71,6 +73,8 @@ function player1IsX() {
 }
 
 function player1IsO() {
+oMarkButton.disabled = true;
+xMarkButton.disabled = false;
 currentPlayerName = 'player 2';
 player1Mark = 'O';
 whoIsX.textContent = '(P2)';
@@ -207,6 +211,8 @@ function reset() {
   currentPlayerName = undefined;
   turn.textContent = 'X';
   tie = false;
+  xMarkButton.disabled = false;
+  oMarkButton.disabled = false;
   restartButton.disabled = false;
   whoWon.classList.remove('display-none');
   whoTakesTheRound.insertBefore(dynamicMark, whoTakesTheRound.firstChild);
