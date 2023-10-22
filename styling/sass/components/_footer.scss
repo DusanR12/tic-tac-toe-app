@@ -1,0 +1,8 @@
+@use "../abstracts/" as *;
+
+.#{$prefix} {
+    &footer {
+        justify-content: space-between;
+        align-items: center;
+    }
+}

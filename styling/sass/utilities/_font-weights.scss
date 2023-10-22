@@ -1,0 +1,7 @@
+@use "../abstracts/" as *;
+
+.#{$prefix} {
+    &fw-bold {
+        font-weight: $font-weight-bold;
+      }
+}

@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+.#{$prefix} {
+    &overlay {
+        position: absolute;
+        inset: 0;
+        background-color: $color-accent-1000;
+        opacity: .5;
+    }
+}

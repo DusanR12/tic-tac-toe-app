@@ -1,0 +1,39 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "sizes" as *;
+@use "mixins" as *;
+
+$prefix: "dr-";
+
+// Contextual
+$color-text-default: $color-accent-200;
+$color-background-default: $color-secondary-900;
+
+$border-radius-1: $size-4;
+$border-radius-2: $size-3;
+
+$box-shadow-1: 0px -8px 0px 0px #10212a inset;
+
+$box-shadow-2: 0px -8px 0px 0px #cc8b13 inset;
+
+$box-shadow-3: 0px -8px 0px 0px #118c87 inset;
+
+$box-shadow-4:  0px -4px 0px 0px #527584 inset;
+
+$box-shadow-5: 0px -4px 0px 0px #10212a inset;
+
+//body
+$body-font-family: $font-family-base;
+$body-font-size: $font-size-200;
+$body-line-height: 1.5;
+$body-text-color: $color-text-default;
+$body-background-color: $color-background-default;
+
+//layout
+$container-width: 29rem;
+$container-width-small: 20rem;
+
+//buttons
+$square-size: 9rem;
+$square-size-small: 6rem; 
+$square-size-xs: 3rem;

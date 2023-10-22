@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+.#{$prefix} {
+    &header {
+        justify-content: space-between;
+        align-items: center;
+        &__turn {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

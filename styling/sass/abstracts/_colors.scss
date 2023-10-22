@@ -1,0 +1,32 @@
+$default: (
+    "primary": (
+        "200": #ffc860,
+        "300": #65e9e4,
+        "400": #f2b137,
+        "500": #31c3bd,
+    ),
+    "secondary": (
+        "600": #3d6176,
+        "800": #1f3641,
+        "900": #1a2a33,
+    ),
+    "accent": (
+        "100": #dbe8ed,
+        "200": #a8bfc9,
+        "1000": #000,
+    )
+);
+
+
+$color-primary-200: var(--primary-200);
+$color-primary-300: var(--primary-300);
+$color-primary-400: var(--primary-400);
+$color-primary-500: var(--primary-500);
+
+$color-secondary-600: var(--secondary-600);
+$color-secondary-800: var(--secondary-800);
+$color-secondary-900: var(--secondary-900);
+
+$color-accent-100: var(--accent-100);
+$color-accent-200: var(--accent-200);
+$color-accent-1000: var(--accent-1000);

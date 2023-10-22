@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+:root {
+     @include mq('medium') {
+       --container-width: #{container-width-small};
+     }
+    --container-width: #{$container-width};
+  
+    @each $color, $shade-map in $default {
+        @each $shade, $value in $shade-map {
+            --#{$color}-#{$shade}: #{$value};
+        }
+    }
+
+    @each $screen-size, $size-map in $font-sizes {
+      @if $screen-size == large {
+        @include mq-2('medium') {
+            @each $size-name, $size-value in $size-map {
+          --fs-#{$size-name}: #{$size-value};
+        }
+    }
+   }
+      @else {
+        @each $size-name, $size-value in $size-map {
+          --fs-#{$size-name}: #{$size-value};
+        }
+      } 
+ }
+}

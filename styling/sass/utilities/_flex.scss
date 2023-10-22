@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+.#{$prefix} {
+    &flex {
+        display: flex;
+      &-col {
+        flex-direction: column;
+      }
+    }
+    &equal-flex-item {
+        @include mq('medium') {
+          flex-basis: $square-size-small;
+        }
+        flex-basis: $square-size;
+    }
+}

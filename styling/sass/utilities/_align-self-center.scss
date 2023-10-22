@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+.#{$prefix} {
+    &align-self-center {
+        align-self: center;
+    }
+}

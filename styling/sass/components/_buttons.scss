@@ -1,0 +1,79 @@
+@use "../abstracts" as *;
+
+.#{$prefix} {
+    &button {
+        display: inline-flex;
+        justify-content: center;
+        cursor: pointer;
+        text-decoration: none;
+        line-height: 1;
+        transition: 275ms ease;
+        border: none;
+
+        &-game-square {
+            justify-content: center;
+            align-items: center;
+            font-size: 5rem;
+            background-color: $color-secondary-800;
+            @include mq('medium') {
+                height: $square-size-small;
+                width: $square-size-small;
+                font-size: $square-size-xs; 
+            }
+            height: $square-size;
+            padding: 0;
+        }
+
+        &-primary-1 {
+            opacity: 0.4;
+            background-color: $color-primary-400;
+            &:is(:hover, :focus) {
+                background-color: $color-primary-200;
+            }
+        }
+        &-primary-2 {
+            background-color: $color-primary-500;
+            &:is(:hover, :focus) {
+                background-color: $color-primary-300;
+            }
+            &:disabled {
+                opacity: .4;
+            }
+        }
+        &-secondary {
+            width: 100%;
+            &:is(:hover, :focus) {
+                background-color: $color-secondary-600;
+            }
+            &:disabled {
+                background-color: $color-accent-200;
+            }
+        }
+        &-accent-1 {
+            background-color: $color-accent-200;
+            &:is(:hover, :focus) {
+                background-color: $color-accent-100;
+            }
+        }
+        &-accent-2 {
+            background-color: $color-primary-400;
+            &:is(:hover, :focus) {
+                background-color: $color-primary-200;
+            }
+        }
+
+        &-restart {
+            &:is(:hover, :focus) {
+                background-color: $color-accent-100;
+            }
+        }
+
+        &:disabled {
+            svg {
+                path {
+                    fill: $color-secondary-900;
+                }
+            }
+        }
+    }
+}

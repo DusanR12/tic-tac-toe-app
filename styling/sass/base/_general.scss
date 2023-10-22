@@ -1,0 +1,14 @@
+@use "../abstracts/" as *;
+
+body {
+    display: grid;
+    place-items: center;
+    position: relative;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    font-family: $body-font-family;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
+    color: $body-text-color;
+    background-color: $body-background-color;
+}

@@ -27,9 +27,9 @@ const nextRoundButton = document.getElementById("accent-button-2");
 const restartButton = document.getElementById("restart-button");
 const newGameContainer = document.getElementById("container-1");
 const gameContainer = document.getElementById("container-2");
-const gameSquares = document.querySelectorAll(".game-square");
-const winStateSection = document.querySelector(".win-state-section");
-const overlay = document.querySelector(".overlay");
+const gameSquares = document.querySelectorAll(".dr-button-game-square");
+const winStateSection = document.getElementById("section");
+const overlay = document.getElementById("overlay");
 
 /* Text, colors etc... */
 const turn = document.getElementById("dynamic-text-1-js");
@@ -86,20 +86,20 @@ function gameWithCpu() {
 }
 
 function gameWithPlayer() {
-  newGameContainer.classList.add("display-none");
-  gameContainer.classList.remove("display-none");
+  newGameContainer.classList.add("dr-display-none");
+  gameContainer.classList.remove("dr-display-none");
 }
 
 function makeMove(gameSquare) {
   switch (currentPlayerMark) {
     case "X":
       gameSquare.textContent = "X";
-      gameSquare.classList.add("primary-1-clr");
+      gameSquare.classList.add("dr-clr-primary-500");
       turn.textContent = "O";
       break;
     case "O":
       gameSquare.textContent = "O";
-      gameSquare.classList.add("primary-2-clr");
+      gameSquare.classList.add("dr-clr-primary-400");
       turn.textContent = "X";
       break;
     default:
@@ -129,8 +129,8 @@ function didPlayerWin() {
 }
 
 function playerWon() {
-  winStateSection.classList.remove("display-none");
-  overlay.classList.remove("display-none");
+  winStateSection.classList.remove("dr-display-none");
+  overlay.classList.remove("dr-display-none");
   restartButton.disabled = true;
   gameSquares.forEach((gameSquare) => {
     gameSquare.disabled = true;
@@ -139,22 +139,22 @@ function playerWon() {
   dynamicMark.textContent = `${currentPlayerMark}`;
 
   if (currentPlayerMark === "X") {
-    whoTakesTheRound.classList.add("primary-1-clr");
+    whoTakesTheRound.classList.add("dr-clr-primary-500");
   } else {
-    whoTakesTheRound.classList.add("primary-2-clr");
+    whoTakesTheRound.classList.add("dr-clr-primary-400");
   }
 }
 
 function tieGame() {
   tie = true;
-  winStateSection.classList.remove("display-none");
-  overlay.classList.remove("display-none");
+  winStateSection.classList.remove("dr-display-none");
+  overlay.classList.remove("dr-display-none");
   restartButton.disabled = true;
-  whoWon.classList.add("display-none");
+  whoWon.classList.add("dr-display-none");
 
-  winStateSection.classList.add("gap-500", "vertical-p-800");
-  winStateSection.classList.remove("vertical-p-700");
-  whoTakesTheRound.classList.add("accent-200-clr");
+  winStateSection.classList.add("dr-gap-9", "dr-padding-block-11");
+  winStateSection.classList.remove("dr-padding-block-10");
+  whoTakesTheRound.classList.add("dr-clr-accent-200");
   whoTakesTheRound.removeChild(dynamicMark);
   roundWonOrTied.textContent = "round tied";
 }
@@ -182,14 +182,14 @@ function quit() {
   xWinsCount.textContent = "0";
   oWinsCount.textContent = "0";
   player1Mark = undefined;
-  gameContainer.classList.add("display-none");
-  newGameContainer.classList.remove("display-none");
+  gameContainer.classList.add("dr-display-none");
+  newGameContainer.classList.remove("dr-display-none");
   reset();
 }
 
 function reset() {
-  winStateSection.classList.add("display-none");
-  overlay.classList.add("display-none");
+  winStateSection.classList.add("dr-display-none");
+  overlay.classList.add("dr-display-none");
   movesTaken = 0;
   currentPlayerMark = "X";
   currentPlayerName = undefined;
@@ -198,17 +198,17 @@ function reset() {
   xMarkButton.disabled = false;
   oMarkButton.disabled = false;
   restartButton.disabled = false;
-  whoWon.classList.remove("display-none");
+  whoWon.classList.remove("dr-display-none");
   whoTakesTheRound.insertBefore(dynamicMark, whoTakesTheRound.firstChild);
-  whoTakesTheRound.classList.remove("primary-1-clr", "primary-2-clr");
-  winStateSection.classList.remove("gap-500", "vertical-p-800");
-  winStateSection.classList.add("vertical-p-700");
-  winStateSection.classList.remove("accent-200-clr");
+  whoTakesTheRound.classList.remove("dr-clr-primary-500", "dr-clr-primary-400", "dr-clr-accent-200");
+  winStateSection.classList.remove("dr-gap-9", "dr-padding-block-11");
+  winStateSection.classList.add("dr-padding-block-10");
+  winStateSection.classList.remove("dr-clr-accent-200");
   roundWonOrTied.textContent = "takes the round";
   gameSquares.forEach((gameSquare) => {
     gameSquare.disabled = false;
     gameSquare.textContent = "";
-    gameSquare.classList.remove("primary-1-clr", "primary-2-clr");
+    gameSquare.classList.remove("dr-clr-primary-500", "dr-clr-primary-400");
   });
 
   switch (player1Mark) {
@@ -220,3 +220,5 @@ function reset() {
       break;
   }
 }
+
+console.log();
