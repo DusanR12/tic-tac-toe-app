@@ -1,3 +1,8 @@
-# A fun TicTacToe game using NativeJS and Vanilla CSS
-*** YET TO IMPLEMENT GAMEVSCPU FEATURE.
-*** YET TO BE FULLY RESPONSIVE.
+# A fun TicTacToe game using JavaScript and SASS.
+- Mobile Responsive
+- Built using: Node Package Manager, Parcel
+- Dynamic Content
+- Interactive elements
+- Built using professional design in Figma from FrontendMentor
+
+

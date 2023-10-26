@@ -221,4 +221,38 @@ function reset() {
   }
 }
 
+// function saveGameState() {
+//   const gameState = {
+//     newGameContainerDisplayNone: newGameContainer.classList.contains("dr-display-none"),
+//     gameContainerDisplayNone: gameContainer.classList.contains("dr-display-none"),
+//     squares: [],
+//   }
+
+//   gameSquares.forEach((gameSquare) => {
+//     gameState.squares.push(gameSquare.textContent);
+//   });
+
+//   localStorage.setItem('tic-tac-toe', JSON.stringify(gameState));
+// }
+
+// function loadGameState() {
+//   const gameState = JSON.parse(localStorage.getItem('tic-tac-toe'));
+//   return gameState || null;
+// }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const gameState = loadGameState();
+//   if (gameState) {
+//       if(gameState.gameContainerDisplayNone === false) {
+//         newGameContainer.classList.add('dr-display-none')
+//         gameContainer.classList.remove('dr-display-none');
+//       }
+
+//       gameSquares.forEach((gameSquare, i) => {
+//         gameSquare.textContent = gameState.squares[i];
+//         gameSquare.textContent === 'X' ? gameSquare.classList.add("dr-clr-primary-500") : gameSquare.classList.add("dr-clr-primary-400");
+//       });
+//   }
+// })
+
 console.log();

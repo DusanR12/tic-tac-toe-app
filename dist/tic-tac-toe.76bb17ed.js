@@ -326,6 +326,41 @@ function reset() {
       break;
   }
 }
+
+// function saveGameState() {
+//   const gameState = {
+//     newGameContainerDisplayNone: newGameContainer.classList.contains("dr-display-none"),
+//     gameContainerDisplayNone: gameContainer.classList.contains("dr-display-none"),
+//     squares: [],
+//   }
+
+//   gameSquares.forEach((gameSquare) => {
+//     gameState.squares.push(gameSquare.textContent);
+//   });
+
+//   localStorage.setItem('tic-tac-toe', JSON.stringify(gameState));
+// }
+
+// function loadGameState() {
+//   const gameState = JSON.parse(localStorage.getItem('tic-tac-toe'));
+//   return gameState || null;
+// }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const gameState = loadGameState();
+//   if (gameState) {
+//       if(gameState.gameContainerDisplayNone === false) {
+//         newGameContainer.classList.add('dr-display-none')
+//         gameContainer.classList.remove('dr-display-none');
+//       }
+
+//       gameSquares.forEach((gameSquare, i) => {
+//         gameSquare.textContent = gameState.squares[i];
+//         gameSquare.textContent === 'X' ? gameSquare.classList.add("dr-clr-primary-500") : gameSquare.classList.add("dr-clr-primary-400");
+//       });
+//   }
+// })
+
 console.log();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -352,7 +387,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52059" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50086" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
